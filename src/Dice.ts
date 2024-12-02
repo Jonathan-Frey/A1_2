@@ -1,1 +1,5 @@
-export class Dice {}
+export class Dice {
+  size() {
+    return 0;
+  }
+}
