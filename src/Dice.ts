@@ -1,5 +1,7 @@
 export class Dice {
+  constructor(faces: number = 6) {}
+
   size() {
-    return 0;
+    return 6;
   }
 }
