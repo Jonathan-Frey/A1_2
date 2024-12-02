@@ -9,4 +9,9 @@ describe("Dice", () => {
     const dice = new Dice();
     expect(dice.size()).toBeDefined();
   });
+
+  it("should receive number of faces in constructor", ()    => {
+    const dice = new Dice(6);
+    expect(dice.size()).toBe(6);
+  }
 });
