@@ -1,7 +1,10 @@
 export class Dice {
-  constructor(faces: number = 6) {}
+  private faces: number;
+  constructor(faces: number = 6) {
+    this.faces = faces;
+  }
 
   size() {
-    return 6;
+    return this.faces;
   }
 }
