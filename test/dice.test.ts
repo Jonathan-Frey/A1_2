@@ -13,17 +13,23 @@ describe("Dice", () => {
 
     it("should receive number of faces in constructor", () => {
       const dice = new Dice(6);
-      expect(dice.size()).toBe(6);
+      const actual = dice.size();
+      const expected = 6;
+      expect(actual).toBe(expected);
     });
 
     it("should receive number of faces in constructor", () => {
       const dice = new Dice(8);
-      expect(dice.size()).toBe(8);
+      const actual = dice.size();
+      const expected = 8;
+      expect(actual).toBe(expected);
     });
 
     it("should default to 6 faces", () => {
       const dice = new Dice();
-      expect(dice.size()).toBe(6);
+      const actual = dice.size();
+      const expected = 6;
+      expect(actual).toBe(expected);
     });
   });
 });
