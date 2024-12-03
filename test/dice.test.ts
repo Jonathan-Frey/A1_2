@@ -5,6 +5,13 @@ describe("Dice", () => {
     expect(Dice).toBeDefined();
   });
 
+  it("should throw an error if faces are less than 4", () => {
+    expect(() => new Dice(3)).toThrow();
+  });
+
+  /*
+  Testing the size method
+  */
   describe("size", () => {
     it("should have a number of faces", () => {
       const dice = new Dice();
