@@ -10,4 +10,6 @@ export class Dice {
   size() {
     return this.faces;
   }
+
+  roll() {}
 }
