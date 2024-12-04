@@ -18,6 +18,8 @@ export class Dice {
   roll() {
     if (this.randomGenerator.generate() === 0.5) {
       return this.faces / 2;
+    } else if (this.randomGenerator.generate() === 0) {
+      return 1;
     } else {
       return this.faces;
     }
