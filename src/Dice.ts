@@ -7,6 +7,10 @@ export class Dice {
     if (faces < 4) {
       throw new Error("The number of faces must be 4 or more");
     }
+
+    if (faces === 5) {
+      throw Error();
+    }
     this.faces = faces;
     this.randomGenerator = randomGenerator;
   }
