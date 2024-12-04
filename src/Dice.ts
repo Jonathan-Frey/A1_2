@@ -8,7 +8,7 @@ export class Dice {
       throw new Error("The number of faces must be 4 or more");
     }
 
-    if (faces === 5) {
+    if (faces % 2 !== 0) {
       throw Error();
     }
     this.faces = faces;
