@@ -5,7 +5,7 @@ describe("Dice", () => {
     expect(Dice).toBeDefined();
   });
 
-  it.each([2, 3])(
+  it.each([0, 1, 2, 3])(
     "should throw an error if the number of faces passed to the constructor is less than 4",
     (input) => {
       expect(() => new Dice(input)).toThrow();
