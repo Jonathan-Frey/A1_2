@@ -5,13 +5,12 @@ describe("Dice", () => {
     expect(Dice).toBeDefined();
   });
 
-  it("should throw an error if the number of faces passed to the constructor is less than 4", () => {
-    expect(() => new Dice(3)).toThrow();
-  });
-
-  it("should throw an error if the number of faces passed to the constructor is less than 4", () => {
-    expect(() => new Dice(2)).toThrow();
-  });
+  it.each([2, 3])(
+    "should throw an error if the number of faces passed to the constructor is less than 4",
+    (input) => {
+      expect(() => new Dice(input)).toThrow();
+    }
+  );
 
   it("should not throw an error if the number of faces passed to the constructor is 4 or more", () => {
     expect(() => new Dice(4)).not.toThrow();
