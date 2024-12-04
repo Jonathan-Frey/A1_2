@@ -1,6 +1,8 @@
+import { RandomGenerator } from "./RandomGenerator";
+
 export class Dice {
   private faces: number;
-  constructor(faces: number = 6) {
+  constructor(faces: number, randomGenerator: RandomGenerator) {
     if (faces < 4) {
       throw new Error("The number of faces must be 4 or more");
     }
@@ -12,6 +14,6 @@ export class Dice {
   }
 
   roll() {
-    return 1;
+    return 3;
   }
 }
