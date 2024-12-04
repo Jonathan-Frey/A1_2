@@ -35,6 +35,10 @@ describe("Dice", () => {
     }
   );
 
+  it("should throw an error if the number of faces passed to the constructor is odd", () => {
+    expect(() => new Dice(5, mockRandomGenerator)).toThrow();
+  });
+
   /*
   Testing the size method
   */
