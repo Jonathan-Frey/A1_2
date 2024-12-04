@@ -93,5 +93,15 @@ describe("Dice", () => {
       const expected = 8;
       expect(actual).toBe(expected);
     });
+
+    it("should return 1 when a mock random generator that returns 0 in passed to the constructor", () => {
+      const mockRandomGeneratorHigh: RandomGenerator = {
+        generate: jest.fn().mockReturnValue(0),
+      };
+      const dice = new Dice(8, mockRandomGeneratorHigh);
+      const actual = dice.roll();
+      const expected = 1;
+      expect(actual).toBe(expected);
+    });
   });
 });
