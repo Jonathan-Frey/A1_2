@@ -6,7 +6,7 @@ describe("Dice", () => {
 
   beforeEach(() => {
     mockRandomGenerator = {
-      generate: jest.fn().mockReturnValue(0.5),
+      generate: jest.fn().mockReturnValue(0.499),
     };
   });
 
@@ -86,7 +86,7 @@ describe("Dice", () => {
 
     it("should return value equal to number of faces when a mock random generator that returns 1 in passed to the constructor", () => {
       const mockRandomGeneratorHigh: RandomGenerator = {
-        generate: jest.fn().mockReturnValue(1),
+        generate: jest.fn().mockReturnValue(0.999),
       };
       const dice = new Dice(8, mockRandomGeneratorHigh);
       const actual = dice.roll();
