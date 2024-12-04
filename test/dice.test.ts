@@ -55,5 +55,10 @@ describe("Dice", () => {
       const dice = new Dice();
       expect(dice.roll).toBeDefined();
     });
+
+    it("should return a value", () => {
+      const dice = new Dice();
+      expect(dice.roll()).toBeDefined();
+    });
   });
 });
