@@ -11,5 +11,7 @@ export class Dice {
     return this.faces;
   }
 
-  roll() {}
+  roll() {
+    return 1;
+  }
 }
