@@ -49,4 +49,11 @@ describe("Dice", () => {
       expect(actual).toBe(expected);
     });
   });
+
+  describe("roll()", () => {
+    it("should return a value", () => {
+      const dice = new Dice();
+      expect(dice.roll()).toBeDefined();
+    });
+  }
 });
