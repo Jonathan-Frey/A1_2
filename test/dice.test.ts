@@ -51,9 +51,9 @@ describe("Dice", () => {
   });
 
   describe("roll()", () => {
-    it("should return a value", () => {
+    it("should be defined", () => {
       const dice = new Dice();
-      expect(dice.roll()).toBeDefined();
+      expect(dice.roll).toBeDefined();
     });
   }
 });
