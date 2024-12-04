@@ -1,8 +1,8 @@
 export class Dice {
   private faces: number;
   constructor(faces: number = 6) {
-    if (faces === 3 || faces === 2 || faces === 1 || faces === 0) {
-      throw new Error();
+    if (faces < 4) {
+      throw new Error("The number of faces must be 4 or more");
     }
     this.faces = faces;
   }
