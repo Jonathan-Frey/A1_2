@@ -9,6 +9,14 @@ describe("Dice", () => {
     expect(() => new Dice(3)).toThrow();
   });
 
+  it("should throw an error if the number of faces passed to the constructor is less than 4", () => {
+    expect(() => new Dice(2)).toThrow();
+  });
+
+  it("should not throw an error if the number of faces passed to the constructor is 4 or more", () => {
+    expect(() => new Dice(4)).not.toThrow();
+  });
+
   it.each([6, 8])(
     "should create a dice with the specified number of faces",
     (input) => {
@@ -29,10 +37,17 @@ describe("Dice", () => {
   /*
   Testing the size method
   */
-  describe("size", () => {
+  describe("size()", () => {
     it("should return a value", () => {
       const dice = new Dice();
       expect(dice.size()).toBeDefined();
+    });
+
+    it("should return the number of faces", () => {
+      const dice = new Dice(8);
+      const actual = dice.size();
+      const expected = 8;
+      expect(actual).toBe(expected);
     });
   });
 });
