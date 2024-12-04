@@ -60,5 +60,29 @@ describe("Dice", () => {
       const dice = new Dice();
       expect(dice.roll()).toBeDefined();
     });
+
+    it("should return a number", () => {
+      const dice = new Dice();
+      const actual = typeof dice.roll();
+      const expected = "number";
+      expect(actual).toBe(expected);
+    });
+
+    it("should return a number between 1 and the number of faces", () => {
+      const dice = new Dice(6);
+      const actual = dice.roll();
+      expect(actual).toBeGreaterThanOrEqual(1);
+      expect(actual).toBeLessThanOrEqual(6);
+    });
+
+    it("should return 3 when a mock random generator in passed to the constructor", () => {
+      const mockRandomGenerator: RandomGenerator = {
+        generate: () => 0.5,
+      };
+      const dice = new Dice(6);
+      const actual = dice.roll();
+      const expected = 3;
+      expect(actual).toBe(expected);
+    });
   });
 });
