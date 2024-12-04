@@ -77,10 +77,20 @@ describe("Dice", () => {
       expect(actual).toBeLessThanOrEqual(6);
     });
 
-    it("should return lower median of faces when a mock random generator in passed to the constructor", () => {
+    it("should return lower median of faces when a mock random generator that returns 0.499 is passed to the constructor", () => {
       const dice = new Dice(6, mockRandomGenerator);
       const actual = dice.roll();
       const expected = 3;
+      expect(actual).toBe(expected);
+    });
+
+    it("should return higher median of faces when a mock random generator that returns 0.5 is passed to the constructor", () => {
+      const mockRandomGeneratorMiddle: RandomGenerator = {
+        generate: jest.fn().mockReturnValue(0.5),
+      };
+      const dice = new Dice(6, mockRandomGeneratorMiddle);
+      const actual = dice.roll();
+      const expected = 4;
       expect(actual).toBe(expected);
     });
 
@@ -95,10 +105,10 @@ describe("Dice", () => {
     });
 
     it("should return 1 when a mock random generator that returns 0 in passed to the constructor", () => {
-      const mockRandomGeneratorHigh: RandomGenerator = {
+      const mockRandomGeneratorLow: RandomGenerator = {
         generate: jest.fn().mockReturnValue(0),
       };
-      const dice = new Dice(8, mockRandomGeneratorHigh);
+      const dice = new Dice(8, mockRandomGeneratorLow);
       const actual = dice.roll();
       const expected = 1;
       expect(actual).toBe(expected);
