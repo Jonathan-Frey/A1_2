@@ -26,12 +26,16 @@ describe("Player", () => {
       expect(sut.hit).toBeDefined();
     });
 
-    it("should add points equal to the dice roll to the players points", () => {
-      const sut = new Player(mockDice);
-      const expected = 2;
-      sut.hit();
-      const actual = sut.points;
-      expect(actual === expected);
-    });
+    it.each([1, 2, 3, 4, 5, 6])(
+      "should add points equal to the dice roll to the players points",
+      (input) => {
+        mockDice.roll = jest.fn().mockReturnValue(input);
+        const sut = new Player(mockDice);
+        const expected = input;
+        sut.hit();
+        const actual = sut.points;
+        expect(actual).toBe(expected);
+      }
+    );
   });
 });
