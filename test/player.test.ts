@@ -1,16 +1,21 @@
-import { Player } from "./Player";
+import { Dice } from "../src/Dice";
+import { RandomGenerator } from "../src/RandomGenerator";
+import { Player } from "../src/Player";
 
 describe("Player", () => {
-  let mockPlayer: Player;
+  let mockDice: Dice;
 
   beforeEach(() => {
-    mockPlayer = {};
+    mockDice = {
+      size: jest.fn().mockReturnValue(6),
+      roll: jest.fn().mockReturnValue(2),
+    };
   });
   it("should be defined", () => {
     expect(Player).toBeDefined();
   });
 
   it("should not throw an error if a dice is passed to the constructor", () => {
-    expect(new Player(mockPlayer)).not.toThrow();
+    expect(new Player(mockDice)).not.toThrow();
   });
 });
