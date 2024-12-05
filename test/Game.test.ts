@@ -1,3 +1,5 @@
+import { Game } from "../src/Game";
+
 describe("Game", () => {
   it("should be defined", () => {
     expect(Game).toBeDefined();
