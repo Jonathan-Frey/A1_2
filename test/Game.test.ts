@@ -11,4 +11,11 @@ describe("Game", () => {
       new Game(playerAmount);
     }).not.toThrow();
   });
+
+  describe("play()", () => {
+    it("should be defined", () => {
+      const sut = new Game(1);
+      expect(sut.play).toBeDefined();
+    });
+  });
 });
