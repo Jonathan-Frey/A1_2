@@ -25,5 +25,10 @@ describe("Player", () => {
       const sut = new Player(mockDice);
       expect(sut.hit).toBeDefined();
     });
+
+    it("should return a value", () => {
+      const sut = new Player(mockDice);
+      expect(sut.hit()).toBeDefined();
+    });
   });
 });
