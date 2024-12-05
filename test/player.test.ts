@@ -19,4 +19,11 @@ describe("Player", () => {
       new Player(mockDice);
     }).not.toThrow();
   });
+
+  describe("hit()", () => {
+    it("should be defined", () => {
+      const sut = new Player(mockDice);
+      expect(sut.hit).toBeDefined();
+    });
+  });
 });
