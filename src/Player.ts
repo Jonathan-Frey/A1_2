@@ -2,13 +2,17 @@ import { Dice } from "./Dice";
 
 export class Player {
   private _points = 0;
-  constructor(dice: Dice) {}
+  private _dice: Dice;
+
+  constructor(dice: Dice) {
+    this._dice = dice;
+  }
 
   get points() {
     return this._points;
   }
 
   hit() {
-    this._points += 2;
+    this._points += this._dice.roll();
   }
 }
