@@ -28,8 +28,8 @@ describe("Dice", () => {
   it.each([6, 8])(
     "should create a dice with the specified number of faces",
     (input) => {
-      const dice = new Dice(input, mockRandomGenerator);
-      const actual = dice.size();
+      const sut = new Dice(input, mockRandomGenerator);
+      const actual = sut.size();
       const expected = input;
       expect(actual).toBe(expected);
     }
@@ -51,13 +51,14 @@ describe("Dice", () => {
   */
   describe("size()", () => {
     it("should return a value", () => {
-      const dice = new Dice(6, mockRandomGenerator);
-      expect(dice.size()).toBeDefined();
+      const sut = new Dice(6, mockRandomGenerator);
+      const actual = sut.size();
+      expect(actual).toBeDefined();
     });
 
     it("should return the number of faces", () => {
-      const dice = new Dice(8, mockRandomGenerator);
-      const actual = dice.size();
+      const sut = new Dice(8, mockRandomGenerator);
+      const actual = sut.size();
       const expected = 8;
       expect(actual).toBe(expected);
     });
@@ -65,32 +66,34 @@ describe("Dice", () => {
 
   describe("roll()", () => {
     it("should be defined", () => {
-      const dice = new Dice(6, mockRandomGenerator);
-      expect(dice.roll).toBeDefined();
+      const sut = new Dice(6, mockRandomGenerator);
+      const actual = sut.roll;
+      expect(actual).toBeDefined();
     });
 
     it("should return a value", () => {
-      const dice = new Dice(6, mockRandomGenerator);
-      expect(dice.roll()).toBeDefined();
+      const sut = new Dice(6, mockRandomGenerator);
+      const actual = sut.roll();
+      expect(actual).toBeDefined();
     });
 
     it("should return a number", () => {
-      const dice = new Dice(6, mockRandomGenerator);
-      const actual = typeof dice.roll();
+      const sut = new Dice(6, mockRandomGenerator);
+      const actual = typeof sut.roll();
       const expected = "number";
       expect(actual).toBe(expected);
     });
 
     it("should return a number between 1 and the number of faces", () => {
-      const dice = new Dice(6, mockRandomGenerator);
-      const actual = dice.roll();
+      const sut = new Dice(6, mockRandomGenerator);
+      const actual = sut.roll();
       expect(actual).toBeGreaterThanOrEqual(1);
       expect(actual).toBeLessThanOrEqual(6);
     });
 
     it("should return lower median of faces when a mock random generator that returns 0.499 is passed to the constructor", () => {
-      const dice = new Dice(6, mockRandomGenerator);
-      const actual = dice.roll();
+      const sut = new Dice(6, mockRandomGenerator);
+      const actual = sut.roll();
       const expected = 3;
       expect(actual).toBe(expected);
     });
@@ -99,8 +102,8 @@ describe("Dice", () => {
       const mockRandomGeneratorMiddle: RandomGenerator = {
         generate: jest.fn().mockReturnValue(0.5),
       };
-      const dice = new Dice(6, mockRandomGeneratorMiddle);
-      const actual = dice.roll();
+      const sut = new Dice(6, mockRandomGeneratorMiddle);
+      const actual = sut.roll();
       const expected = 4;
       expect(actual).toBe(expected);
     });
@@ -109,8 +112,8 @@ describe("Dice", () => {
       const mockRandomGeneratorHigh: RandomGenerator = {
         generate: jest.fn().mockReturnValue(0.999),
       };
-      const dice = new Dice(8, mockRandomGeneratorHigh);
-      const actual = dice.roll();
+      const sut = new Dice(8, mockRandomGeneratorHigh);
+      const actual = sut.roll();
       const expected = 8;
       expect(actual).toBe(expected);
     });
@@ -119,8 +122,8 @@ describe("Dice", () => {
       const mockRandomGeneratorLow: RandomGenerator = {
         generate: jest.fn().mockReturnValue(0),
       };
-      const dice = new Dice(8, mockRandomGeneratorLow);
-      const actual = dice.roll();
+      const sut = new Dice(8, mockRandomGeneratorLow);
+      const actual = sut.roll();
       const expected = 1;
       expect(actual).toBe(expected);
     });
