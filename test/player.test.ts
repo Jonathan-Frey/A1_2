@@ -25,5 +25,13 @@ describe("Player", () => {
       const sut = new Player(mockDice);
       expect(sut.hit).toBeDefined();
     });
+
+    it("should add points equal to the dice roll to the players points", () => {
+      const sut = new Player(mockDice);
+      const expected = 2;
+      sut.hit();
+      const actual = sut.points;
+      expect(actual === expected);
+    });
   });
 });
