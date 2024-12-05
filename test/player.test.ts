@@ -1,5 +1,4 @@
 import { Dice } from "../src/Dice";
-import { RandomGenerator } from "../src/RandomGenerator";
 import { Player } from "../src/Player";
 
 describe("Player", () => {
@@ -16,6 +15,8 @@ describe("Player", () => {
   });
 
   it("should not throw an error if a dice is passed to the constructor", () => {
-    expect(new Player(mockDice)).not.toThrow();
+    expect(() => {
+      new Player(mockDice);
+    }).not.toThrow();
   });
 });
