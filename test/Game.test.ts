@@ -1,5 +1,5 @@
 import { Game } from "../src/Game";
-import {Player} from "../src/Player"
+import { Player } from "../src/Player";
 
 describe("Game", () => {
   it("should be defined", () => {
@@ -20,9 +20,10 @@ describe("Game", () => {
     });
 
     it("should return a player", () => {
-      const sut = new Game(2)
-      const actual = sut.play()
-      expect(instanceof actual).toBe(Player)
-    })
+      const sut = new Game(2);
+      const actual = sut.play();
+      console.log(actual instanceof Player);
+      expect(actual instanceof Player).toBeTruthy();
+    });
   });
 });
