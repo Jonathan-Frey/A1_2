@@ -1,4 +1,5 @@
 import { Game } from "../src/Game";
+import {Player} from "../src/Player"
 
 describe("Game", () => {
   it("should be defined", () => {
@@ -17,5 +18,11 @@ describe("Game", () => {
       const sut = new Game(1);
       expect(sut.play).toBeDefined();
     });
+
+    it("should return a player", () => {
+      const sut = new Game(2)
+      const actual = sut.play()
+      expect(instanceof actual).toBe(Player)
+    })
   });
 });
