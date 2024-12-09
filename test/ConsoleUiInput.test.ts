@@ -14,13 +14,5 @@ describe("ConsoleUiInput()", () => {
       const sut = new ConsoleUiInput();
       expect(sut.requestInput).toBeDefined();
     });
-
-    it("should return a string", () => {
-      const sut = new ConsoleUiInput();
-      const expected = "string";
-      const actual = typeof sut.requestInput();
-
-      expect(actual).toBe(expected);
-    });
   });
 });

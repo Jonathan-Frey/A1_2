@@ -1,3 +1,3 @@
 export interface UiInput {
-  requestInput: () => string;
+  requestInput: () => Promise<string>;
 }
