@@ -10,7 +10,9 @@ describe("ConsoleUiInput()", () => {
   });
 
   describe("requestInput()", () => {
-    const sut = new ConsoleUiInput();
-    expect(sut.requestInput).toBeDefined();
+    it("should be defined", () => {
+      const sut = new ConsoleUiInput();
+      expect(sut.requestInput).toBeDefined();
+    });
   });
 });
