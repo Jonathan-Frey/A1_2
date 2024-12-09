@@ -1,5 +1,7 @@
 import { UiOutput } from "./UiOutput";
 
 export class ConsoleUiOutput implements UiOutput {
-  display(text: string) {}
+  display(text: string) {
+    console.log(text);
+  }
 }
