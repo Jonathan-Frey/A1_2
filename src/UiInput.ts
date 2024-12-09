@@ -1,1 +1,3 @@
-export interface UiInput {}
+export interface UiInput {
+  requestInput: () => string;
+}
