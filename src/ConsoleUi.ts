@@ -1,1 +1,1 @@
-export const ConsoleUi = 1;
+export class ConsoleUi {}
