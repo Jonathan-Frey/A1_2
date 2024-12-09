@@ -10,4 +10,11 @@ describe("ConsoleUi", () => {
       new ConsoleUi();
     }).not.toThrow();
   });
+
+  // it("should take an implementation of UiInput as a costructor parameter", () => {
+  //   const consoleUiInput = new ConsoleUiInput();
+  //   expect(() => {
+  //     new ConsoleUi();
+  //   }).not.toThrow();
+  // });
 });
