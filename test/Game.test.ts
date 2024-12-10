@@ -22,7 +22,6 @@ describe("Game", () => {
     it("should return a player", () => {
       const sut = new Game(2);
       const actual = sut.play();
-      console.log(actual instanceof Player);
       expect(actual instanceof Player).toBeTruthy();
     });
   });
