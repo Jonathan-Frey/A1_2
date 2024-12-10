@@ -25,11 +25,11 @@ describe("ConsoleUi", () => {
       const consoleUiInput = new ConsoleUiInput(stdin);
       const consoleUi = new ConsoleUi(consoleUiInput, mockUiOutput);
 
-      const input = "Hello, World!";
+      const expected = "Hello, World!";
 
-      consoleUi.showWelcome(input);
+      consoleUi.showWelcome();
 
-      expect(mockUiOutput.display).toHaveBeenCalledWith(input);
+      expect(mockUiOutput.display).toHaveBeenCalledWith(expected);
     });
   });
 });
